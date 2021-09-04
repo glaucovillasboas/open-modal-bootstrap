@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=https://getbootstrap.com/" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <title>Abrir Modal</title>
+    </head>
+    <body>
+        <a class="abrir-modal button" modal="modais/modal2.html" content="formularios/formulario1.html" title="Formulario 1">
+        Abrir Modal 1
+        </a>
+
+        <a class="abrir-modal button" modal="modais/modal2.html" content="formularios/formulario1.html" title="Formulario 2">
+        Abrir Modal 2
+        </a>
+
+        <a class="abrir-modal button" modal="modais/modal1.html" content="formularios/formulario2.html" title="Formulario 3">
+        Abrir Modal 3
+        </a>
+
+        <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
+        <script src="scripts/configModal.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
