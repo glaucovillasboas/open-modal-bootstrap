@@ -8,11 +8,8 @@ const insertModalContent = (modalContainer, content, title, id) => {
     } else {
         modal.querySelector('.modal-header').innerHTML = title;
     }
-    document.querySelectorAll("*[data-dismiss='modal'],*[data-bs-dismiss='modal']").forEach((button) => {
-        button.onclick = () => {
-            closeModal();
-        }
-    })
+
+    //WILL LOAD THE CONTENT FROM A SEPARATE FILE INTO THE MODAL
     fetch(content).then((response) =>
         response.text()
     ).then((html) => {
@@ -21,6 +18,7 @@ const insertModalContent = (modalContainer, content, title, id) => {
 }
 
 const createModal = (id, content, modal , title) => {
+    //WILL LOAD THE MODAL FROM THE SEPARATE FILE INTO THE BODY
     fetch(modal).then((response) =>
         response.text()
     ).then((html) => {
@@ -29,45 +27,28 @@ const createModal = (id, content, modal , title) => {
         document.body.appendChild(modalContainer);
         setTimeout(() => {
             insertModalContent(modalContainer, content, title, id);
+            const fragment = document.createDocumentFragment();
+            while (modalContainer.firstChild) {
+                fragment.appendChild(modalContainer.firstChild);
+            }
+            modalContainer.parentNode.replaceChild(fragment, modalContainer);
         }, 50);
     });
 }
 
 const configModais = () => {
-    openModalButtons = document.querySelectorAll('a.abrir-modal');
+    //GETS ALL TAGS WITH THE PROPS data-bs-toggle, modal AND content;
+    const openModalButtons = document.querySelectorAll("*[data-bs-toggle='modal'][modal][content]");
 
     openModalButtons.forEach((button, index) => {
+        button.style.cursor = "pointer";
+        //ADD THE data-bs-target PROP TO THE BUTTON POINTING TO THE RIGHT ID 
+        button.setAttribute('data-bs-target', `#modal-${index}`);
         const content = button.getAttribute('content');
         const title = button.getAttribute('title');
         const modal = button.getAttribute('modal');
-
         createModal(index, content, modal, title);
-
-        button.onclick = () => {
-            openModal(index);
-        }
     })
-}
-
-closeModal = () => {
-    document.getElementById("backdrop").style.display = "none"
-    document.querySelectorAll('.modal').forEach((modal) => {
-        modal.style.display = "none"
-        modal.classList.remove("show")
-    })
-}
-
-openModal = (id) => {
-    document.getElementById("backdrop").style.display = "block";
-    const modal = document.querySelector(`#modal-${id}`);
-    modal.style.display = "block"
-    modal.classList.add("show")
-}
-
-window.onclick = function (event) {
-    if (event.target.classList.contains('modal')) {
-        closeModal()
-    }
 }
 
 configModais();

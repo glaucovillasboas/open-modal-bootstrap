@@ -6,10 +6,6 @@ body {
     height: 100vh;
 }
 
-.abrir-modal {
-	cursor: pointer;
-}
-
 .button {
     color: #fff !important;
 	text-transform: uppercase;
@@ -21,8 +17,4 @@ body {
 	border: none;
 	transition: all 0.4s ease 0s;
 	margin-top: 10px;
-}
-
-.hidden {
-	display: none !important;
 }
