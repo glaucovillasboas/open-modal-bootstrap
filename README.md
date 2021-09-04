@@ -20,7 +20,7 @@ This project serves to load Bootstrap modals and modals's content from separate 
    ```sh
    git clone https://github.com/glappsmobile/open-modal-bootstrap.git
    ```
-3. import `scripts/configModal.js` to your project
+3. import `scripts/configModals.js` to your project
 
 ## Usage
 After importing `Bootstrap` and `scripts/configModal.js`, you'll need 3 things:
