@@ -36,7 +36,7 @@ const createModal = (id, content, modal , title) => {
     });
 }
 
-const configModais = () => {
+const configModals = () => {
     //GETS ALL TAGS WITH THE PROPS data-bs-toggle, modal AND content;
     const openModalButtons = document.querySelectorAll("*[data-bs-toggle='modal'][modal][content]");
 
@@ -51,4 +51,4 @@ const configModais = () => {
     })
 }
 
-configModais();
+configModals();
