@@ -10,7 +10,7 @@ This project serves to load Bootstrap modals and modals's content from separate 
 
 ### Installation
 
-1. Import `Bootstrap` css and script `(v5.0 ++)`
+1. Import `Bootstrap (v5.0 ++)` `css` and `javascript`
    ```html
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -21,9 +21,11 @@ This project serves to load Bootstrap modals and modals's content from separate 
    git clone https://github.com/glappsmobile/open-modal-bootstrap.git
    ```
 3. import `scripts/configModals.js` to your project
-
+   ```html
+   <script src="path/to/configModals.js"></script>
+   ```
 ## Usage
-After importing `Bootstrap` and `scripts/configModal.js`, you'll need 3 things:
+After importing `Bootstrap` and `scripts/configModals.js`, you'll need 3 things:
 
 1. A tag to serve as a button
 2. A html file with the modal (php file that echoes a html inside a string works too)
