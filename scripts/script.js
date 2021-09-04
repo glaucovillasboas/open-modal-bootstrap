@@ -1,4 +1,5 @@
 const sendInfo = (event) => {
+    event.preventDefault();
     const modal = event.path.filter((element) => element.classList && element.classList.contains('modal'))[0];
     const title = (modal.querySelector('.modal-title')) ? modal.querySelector('.modal-title').innerHTML : modal.querySelector('.modal-header').innerHTML;
     const form = modal.querySelector('.modal-content');
